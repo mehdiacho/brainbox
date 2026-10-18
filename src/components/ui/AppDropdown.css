@@ -1,0 +1,93 @@
+.app-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+    font-size: 17px;
+    color: #33AAFF;
+    margin-left: 4px;
+    cursor: pointer;
+    /* Ensuring proper contrast ratio of approximately 7.55 against dark background */
+    font-weight: 500;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    margin-left: 8px;
+    color: #33AAFF;
+    font-size: 10px;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+    border: solid #33AAFF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 10px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  z-index: 1000;
+  min-width: 450px;
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dropdown-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.dropdown-option:hover {
+  background-color: #333333;
+}
+
+.dropdown-option:hover .option-name {
+    color: #4285f4;
+    font-weight: 700;
+  }
+
+.dropdown-option.highlighted {
+  background-color: #4285f4;
+}
+
+.option-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  font-size: 24px;
+  background-color: #333333;
+  border-radius: 8px;
+}
+
+.option-name {
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.highlighted .option-name {
+  color: #ffffff;
+}
+
