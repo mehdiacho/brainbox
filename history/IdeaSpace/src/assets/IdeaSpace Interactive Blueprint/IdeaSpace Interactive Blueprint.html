@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaSpace: Interactive Infographic</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f0f9ff; /* sky-50 */
+        }
+        .feature-card, .tier-header, .tier-column, .tech-card, .roadmap-card { 
+            transition: all 0.3s ease-in-out; 
+        }
+        .tier-column.dimmed { 
+            opacity: 0.3; 
+            transform: scale(0.98);
+        }
+        .feature-card:hover, .tech-card:hover, .roadmap-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 15px -3px rgb(3 7 18 / 0.08), 0 4px 6px -4px rgb(3 7 18 / 0.08);
+        }
+        .animated-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animated-item.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-bg-hero {
+             background-image: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+        }
+        .gradient-bg-section {
+            background-image: linear-gradient(to bottom, #f0f9ff, white);
+        }
+    </style>
+</head>
+<body class="bg-sky-50 text-slate-800">
+
+    <header class="bg-white/70 backdrop-blur-lg sticky top-0 z-50 border-b border-slate-200/80">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between items-center py-4">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full flex items-center justify-center text-white shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z"></path><path d="M15 3v6h6"></path><path d="M10 16s.8-1 2-1c1.3 0 2 1 2 1"></path><path d="M8 12h8"></path></svg>
+                </div>
+                <span class="text-2xl font-bold text-slate-900">IdeaSpace</span>
+            </div>
+            <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
+                <a href="#concept" class="text-slate-600 hover:text-blue-600">Concept</a>
+                <a href="#features" class="text-slate-600 hover:text-blue-600">Features</a>
+                <a href="#tiers" class="text-slate-600 hover:text-blue-600">Tiers</a>
+                <a href="#stack" class="text-slate-600 hover:text-blue-600">Stack</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="text-center py-20 lg:py-32 px-4 gradient-bg-hero">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight animated-item">Visualizing the IdeaSpace Blueprint</h1>
+            <p class="max-w-3xl mx-auto mt-6 text-lg text-slate-600 animated-item" style="transition-delay: 100ms;">
+                An interactive infographic exploring an AI-powered application for capturing, developing, and organizing ideas.
+            </p>
+            <div class="mt-8 animated-item" style="transition-delay: 200ms;">
+                <a href="#concept" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg shadow-blue-500/20">Explore the Concept</a>
+            </div>
+        </section>
+
+        <!-- Core Concept Section -->
+        <section id="concept" class="py-20 lg:py-24 px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 animated-item">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">The Core Concept: An "Idea"</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-slate-600">The fundamental unit of IdeaSpace is not just a note, but a comprehensive, multi-modal container for a concept.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl shadow-sky-100/50 border border-slate-200/80 grid md:grid-cols-2 gap-8 items-center animated-item" style="transition-delay: 150ms;">
+                    <div class="space-y-6">
+                        <div class="group relative p-4 rounded-lg hover:bg-sky-50 transition-colors">
+                            <h3 class="font-bold text-lg text-blue-800">Title</h3>
+                            <p class="text-slate-600 text-sm">A concise name for the idea.</p>
+                        </div>
+                        <div class="group relative p-4 rounded-lg hover:bg-sky-50 transition-colors">
+                            <h3 class="font-bold text-lg text-blue-800">Core Note</h3>
+                            <p class="text-slate-600 text-sm">A primary text document supporting Markdown for rich formatting.</p>
+                        </div>
+                         <div class="group relative p-4 rounded-lg hover:bg-sky-50 transition-colors">
+                            <h3 class="font-bold text-lg text-blue-800">Media Gallery</h3>
+                            <p class="text-slate-600 text-sm">A collection of audio, images, and videos associated with the idea.</p>
+                        </div>
+                    </div>
+                    <div class="bg-sky-50/50 rounded-xl p-8 flex flex-col items-center justify-center aspect-square border border-slate-200">
+                        <div class="w-full bg-white p-4 rounded-lg shadow-md border">
+                            <div class="h-2 w-1/2 bg-slate-200 rounded-full"></div>
+                            <div class="h-2 w-full bg-slate-200 rounded-full mt-3"></div>
+                            <div class="h-2 w-3/4 bg-slate-200 rounded-full mt-2"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-3 mt-4 w-full">
+                            <div class="aspect-square bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 font-bold text-2xl">♫</div>
+                            <div class="aspect-square bg-green-100 rounded-lg flex items-center justify-center text-green-600 font-bold text-2xl">🖼</div>
+                            <div class="aspect-square bg-red-100 rounded-lg flex items-center justify-center text-red-600 font-bold text-2xl">▶</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Key Features Section -->
+        <section id="features" class="py-20 lg:py-24 px-6 lg:px-8 gradient-bg-section">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 animated-item">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Key Features</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-slate-600">IdeaSpace integrates powerful tools for content capture, AI-powered intelligence, and seamless data management.</p>
+                </div>
+                
+                <div id="features-container" class="animated-item" style="transition-delay: 150ms;">
+                    <div class="flex justify-center border-b border-slate-200 mb-8">
+                        <button data-tab="capture" class="feature-tab active-tab font-semibold px-6 py-3 text-blue-600 border-b-2 border-blue-600">Content Capture</button>
+                        <button data-tab="ai" class="feature-tab font-semibold px-6 py-3 text-slate-500 hover:text-blue-600">AI Intelligence</button>
+                        <button data-tab="ui" class="feature-tab font-semibold px-6 py-3 text-slate-500 hover:text-blue-600">Advanced UI/UX</button>
+                    </div>
+
+                    <div id="capture-content" class="feature-content grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Rich Text Notes</h3><p class="text-sm text-slate-600 mt-1">Full Markdown support in the core note editor.</p>
+                        </div>
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Audio Transcription</h3><p class="text-sm text-slate-600 mt-1">Automatically transcribe uploaded audio files.</p>
+                        </div>
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Image & Video Uploads</h3><p class="text-sm text-slate-600 mt-1">Enhance ideas with a visual media gallery.</p>
+                        </div>
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Multiple File Uploads</h3><p class="text-sm text-slate-600 mt-1">Streamlined workflow for adding multiple media files at once.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="ai-content" class="feature-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Holistic Idea Analysis</h3><p class="text-sm text-slate-600 mt-1">AI analyzes the entire idea context for summaries and takeaways.</p>
+                        </div>
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Intelligent Media Processing</h3><p class="text-sm text-slate-600 mt-1">Generate titles, descriptions, and tags for media.</p>
+                        </div>
+                        <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Automated Analysis</h3><p class="text-sm text-slate-600 mt-1">One-click analysis of all media in an idea for instant organization.</p>
+                        </div>
+                    </div>
+
+                    <div id="ui-content" class="feature-content hidden grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                         <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Intelligent Deep Search</h3><p class="text-sm text-slate-600 mt-1">Search across titles, notes, transcriptions, and AI-generated tags.</p>
+                        </div>
+                         <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Contextual Search Results</h3><p class="text-sm text-slate-600 mt-1">See *why* an item matched your search with "Found in..." snippets.</p>
+                        </div>
+                         <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Elegant AI Interaction</h3><p class="text-sm text-slate-600 mt-1">A clean, pop-out menu for all AI actions keeps the interface tidy.</p>
+                        </div>
+                         <div class="feature-card bg-white p-6 rounded-lg border border-slate-200/80">
+                            <h3 class="font-bold">Dynamic Media States</h3><p class="text-sm text-slate-600 mt-1">Clear visual feedback for media status: Queued, Transcribing, or Complete.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Tiers Section -->
+        <section id="tiers" class="py-20 lg:py-24 px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16 animated-item">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">User Tiers & Data Persistence</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-slate-600">A flexible architecture supporting three distinct user tiers. Click a tier to focus.</p>
+                </div>
+                
+                <div id="tiers-table" class="overflow-x-auto animated-item" style="transition-delay: 150ms;">
+                    <table class="w-full min-w-[800px] border-collapse text-left bg-white rounded-lg shadow-xl shadow-sky-100/50">
+                        <thead>
+                            <tr>
+                                <th class="p-4 bg-slate-100/70 rounded-tl-lg font-bold text-slate-700 w-1/4">Feature</th>
+                                <th data-tier="guest" class="tier-header p-4 bg-slate-100/70 font-bold text-slate-700 text-center cursor-pointer hover:bg-slate-200">Guest</th>
+                                <th data-tier="free" class="tier-header p-4 bg-slate-100/70 font-bold text-slate-700 text-center cursor-pointer hover:bg-slate-200">Free Tier</th>
+                                <th data-tier="pro" class="tier-header p-4 bg-slate-100/70 rounded-tr-lg font-bold text-slate-700 text-center cursor-pointer hover:bg-slate-200">Pro Tier</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-4 font-semibold">Data Storage</td>
+                                <td data-tier="guest" class="tier-column p-4 text-center">Local Storage</td>
+                                <td data-tier="free" class="tier-column p-4 text-center">Cloud Firestore</td>
+                                <td data-tier="pro" class="tier-column p-4 text-center">Cloud Firestore</td>
+                            </tr>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-4 font-semibold">Cloud Sync</td>
+                                <td data-tier="guest" class="tier-column p-4 text-center text-red-500 text-xl font-bold">✗</td>
+                                <td data-tier="free" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                                <td data-tier="pro" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                            </tr>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-4 font-semibold">AI Features</td>
+                                <td data-tier="guest" class="tier-column p-4 text-center text-red-500 text-xl font-bold">✗</td>
+                                <td data-tier="free" class="tier-column p-4 text-center">Limited Quota</td>
+                                <td data-tier="pro" class="tier-column p-4 text-center">Unlimited</td>
+                            </tr>
+                            <tr class="border-b border-slate-200">
+                                <td class="p-4 font-semibold">Import/Export</td>
+                                <td data-tier="guest" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                                <td data-tier="free" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                                <td data-tier="pro" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                            </tr>
+                             <tr>
+                                <td class="p-4 font-semibold">Deep Search</td>
+                                <td data-tier="guest" class="tier-column p-4 text-center">Local Data</td>
+                                <td data-tier="free" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                                <td data-tier="pro" class="tier-column p-4 text-center text-green-500 text-xl font-bold">✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section id="stack" class="py-20 lg:py-24 px-6 lg:px-8 gradient-bg-section">
+            <div class="max-w-5xl mx-auto">
+                 <div class="text-center mb-16 animated-item">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Architecture & Tech Stack</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-slate-600">Built with modern, scalable, and robust technologies.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="tech-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item"><span class="font-bold">React</span><p class="text-xs text-slate-500">Frontend</p></div>
+                    <div class="tech-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item" style="transition-delay: 100ms;"><span class="font-bold">Tailwind CSS</span><p class="text-xs text-slate-500">Styling</p></div>
+                    <div class="tech-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item" style="transition-delay: 200ms;"><span class="font-bold">Firebase</span><p class="text-xs text-slate-500">Backend & Auth</p></div>
+                    <div class="tech-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item" style="transition-delay: 300ms;"><span class="font-bold">Gemini API</span><p class="text-xs text-slate-500">AI Engine</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Future Development -->
+        <section id="roadmap" class="py-20 lg:py-24 px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16 animated-item">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Future Development</h2>
+                    <p class="max-w-2xl mx-auto mt-4 text-slate-600">This blueprint lays the foundation for exciting future enhancements.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 text-center">
+                    <div class="roadmap-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item">
+                        <h3 class="font-bold">Real-time Collaboration</h3>
+                    </div>
+                    <div class="roadmap-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item" style="transition-delay: 100ms;">
+                        <h3 class="font-bold">Full Payment Integration</h3>
+                    </div>
+                    <div class="roadmap-card bg-white p-6 rounded-lg border border-slate-200/80 animated-item" style="transition-delay: 200ms;">
+                        <h3 class="font-bold">Native Mobile Applications</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="bg-slate-800 text-slate-400 py-8 px-6 text-center text-sm">
+        <p>&copy; 2025 IdeaSpace Interactive Infographic. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Feature Tabs
+            const featureTabs = document.querySelectorAll('.feature-tab');
+            const featureContents = document.querySelectorAll('.feature-content');
+
+            featureTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    featureTabs.forEach(t => {
+                        t.classList.remove('active-tab', 'text-blue-600', 'border-blue-600');
+                        t.classList.add('text-slate-500');
+                    });
+                    tab.classList.add('active-tab', 'text-blue-600', 'border-blue-600');
+                    tab.classList.remove('text-slate-500');
+
+                    featureContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    document.getElementById(tab.dataset.tab + '-content').classList.remove('hidden');
+                });
+            });
+
+            // Tiers Table
+            const tierHeaders = document.querySelectorAll('.tier-header');
+            const tierColumns = document.querySelectorAll('.tier-column');
+            
+            let activeTier = null;
+
+            const highlightTier = (tier) => {
+                 tierColumns.forEach(col => {
+                    if (tier && col.dataset.tier !== tier) {
+                        col.classList.add('dimmed');
+                    } else {
+                        col.classList.remove('dimmed');
+                    }
+                });
+
+                 tierHeaders.forEach(header => {
+                     if (tier && header.dataset.tier === tier) {
+                         header.classList.add('bg-blue-100');
+                     } else {
+                         header.classList.remove('bg-slate-100/70');
+                     }
+                 });
+            };
+
+            tierHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const tier = header.dataset.tier;
+                    if (activeTier === tier) {
+                        activeTier = null;
+                        highlightTier(null);
+                    } else {
+                        activeTier = tier;
+                        highlightTier(tier);
+                    }
+                });
+            });
+
+            // Scroll Animations
+            const animatedItems = document.querySelectorAll('.animated-item');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedItems.forEach(item => {
+                observer.observe(item);
+            });
+        });
+    </script>
+</body>
+</html>
